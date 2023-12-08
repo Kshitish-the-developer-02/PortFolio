@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 function Home() {
   return (
-    <div name="home" className=" w-full h-screen bg-gradient-to-b from-black via-black to-gray-500">
+    <div name="home" className=" w-full h-screen bg-gradient-to-b  from-black to bg-gray-800">
       {/* <img src={heroImage} alt="my image" /> */}
       <div className=" max-w-screen-lg mx-auto flex flex-col
                   items-center justify-center h-full px-4 md:flex-row">

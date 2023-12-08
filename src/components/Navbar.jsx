@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-scroll";
+
 function Navbar() {
   const [nav, setNav] = useState(false);
+  const[click,setClick]=useState(false)
   const links = [
     {
       id: 1,
@@ -36,7 +39,11 @@ function Navbar() {
             key={id}
             className=" text-gray-500 px-4 cursor-pointer font-medium hover:scale-105 duration-200 "
           >
-            {link}
+            <a href=""></a>
+            <Link to={link} smooth duration={500}>
+              {" "}
+              {link}
+            </Link>
           </li>
         ))}
       </ul>
@@ -46,20 +53,19 @@ function Navbar() {
       >
         {nav ? <RxCross2 size={30} /> : <RiMenu2Fill size={30} />}
       </div>
-      {nav &&(
-          <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to bg-gray-500 ">
+      {nav && (
+        <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to bg-gray-500 ">
           {links.map(({ id, link }) => (
-              <li
-                key={id}
-                className=" text-gray-500 px-4 cursor-pointer font-medium hover:scale-105 duration-200 
+            <li
+              key={id}
+              className=" text-gray-500 px-4 cursor-pointer font-medium hover:scale-105 duration-200 
                             py-6 text-4xl"
-              >
-                {link}
-              </li>
-            ))}
-          </ul>
+            >
+              {link}
+            </li>
+          ))}
+        </ul>
       )}
-      
     </div>
   );
 }
